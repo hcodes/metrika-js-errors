@@ -23,7 +23,7 @@ window.onerror = function handler(msg, file, line, col, err) {
 
     pointer[path[i]] = 1;
 
-    var url = 'https://mc.yandex.ru/watch/' + id + '/' +
+    var url = 'https://mc.yandex.ru/watch/' + counterId + '/' +
             '?site-info=' + encodeURIComponent(JSON.stringify(siteInfo)) +
             '&rn=' + Math.random();
 
