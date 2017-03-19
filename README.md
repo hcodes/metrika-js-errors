@@ -21,9 +21,9 @@ window.onerror = function(msg, file, line, col) {
 ### Собственно, решение
 Отправлять ошибки будем в [Яндекс.Метрику](https://metrika.yandex.ru). Если у вас на сайте уже установлена другая система аналитики, полноценный код отслеживания Метрики устанавливать не нужно. Метрика бесплатна, нет особых ограничений на количество счётчиков и сохраняемых ошибок.
 
-Для сбора ошибок в Метрике подойдёт отчёт «<a target="_blank" href="https://yandex.ru/support/metrika/reports/visit-params.xml">Параметры визитов</a>».
+Для сбора ошибок в Метрике подойдёт отчёт «[Параметры визитов](https://yandex.ru/support/metrika/reports/visit-params.xml)».
 
-1. <a target="_blank" href="https://metrika.yandex.ru/add">Заведём</a> отдельный счётчик.
+1. [Заведём](https://metrika.yandex.ru/add) отдельный счётчик.
 
 2. Добавим на страницу перед всеми скриптами компактный код, это поможет дополнительно отлавливать ошибки загрузки этих же скриптов:
 ```html
@@ -57,15 +57,16 @@ window.onerror = function(msg, file, line, col) {
             '/?site-info=' + encodeURIComponent(JSON.stringify(siteInfo))
             '&rn=' + Math.random();
     };
-</script>```
+</script>
+```
 
 3. Не забываем указать в коде собственный номер счётчика (counterId).
 
-4. Получаем примерно <a href="https://metrika.yandex.ru/stat/user_vars?group=dekaminute&chart_type=pie&period=2017-03-12%3A2017-03-12&id=43395579">такой отчёт</a>:
+4. Получаем примерно [такой отчёт](https://metrika.yandex.ru/stat/user_vars?group=dekaminute&chart_type=pie&period=2017-03-12%3A2017-03-12&id=43395579):
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/1.png" />
 
 Структуру и порядок параметров в отчёте можно менять на лету, а также добавлять новые параметры.
-Давайте с помощью кнопки «Группировки» добавим <a target="_blank" href="https://metrika.yandex.ru/stat/user_vars?group=dekaminute&selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&id=43395579">браузер и ОС</a> в отчёт.
+Давайте с помощью кнопки «Группировки» добавим [браузер и ОС](https://metrika.yandex.ru/stat/user_vars?group=dekaminute&selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&id=43395579) в отчёт.
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/3.png" />
 
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/4.png" />
