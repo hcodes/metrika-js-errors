@@ -7,11 +7,11 @@ window.onerror = function handler(msg, file, line, col, err) {
         stack = err && err.stack,
         path = [
             // Укажите в регулярном выражении домены, с которых загружается ваш сайт и скрипты.
-            'JS ' + (!filename || /mysite\.ru|cdn\.com/.test(filename) ? 'in' : 'ex') + 'ternal errors',
+            'JS ' + (!file || /mysite\.ru|cdn\.com/.test(file) ? 'in' : 'ex') + 'ternal errors',
             'message: ' + msg,
             stack ?
                 'stack: ' + stack :
-                (filename ? 'filename: ' + filename + ':' + line + ':' + column : 'nofilename'),
+                (file ? 'filename: ' + file + ':' + line + ':' + col : 'nofilename'),
             'href: ' + location.href
         ];
 
