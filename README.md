@@ -74,7 +74,8 @@ window.onerror = function(msg, file, line, col) {
 И ещё один момент, если скрипты на сайте загружаются с другого домена (CDN), то в отчёте, скорее всего, будут видны сообщения вида «Script error» и без стека.
 Чтобы вернуть сообщениям нормальный вид, необходимо добавить к скриптам атрибут `crossorigin="anonymous"` и HTTP-заголовок `Access-Control-Allow-Origin:"*"`.
 ```html
- <script src="https://mycdn.com/folder/file.js" crossorigin="anonymous"></script>```
+<script src="https://mycdn.com/folder/file.js" crossorigin="anonymous"></script>
+```
 
 Постепенно в отчете будут появляться ошибки от расширений браузера, вирусов и внешних скриптов (рекламные систем, кнопок социальных сетей и пр.). Чтобы отделить эти ошибки, доработаем код.
 
