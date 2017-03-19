@@ -1,7 +1,7 @@
 window.onerror = function(msg, file, line, col, err) {
     if (!window.JSON) { return; }
 
-    var counterId = 12345, // Your counterId.
+    var counterId = 12345, // Ваш номер счётчика Метрики.
         siteInfo = {},
         pointer = siteInfo;
         path = [
@@ -22,3 +22,4 @@ window.onerror = function(msg, file, line, col, err) {
         '/?site-info=' + encodeURIComponent(JSON.stringify(siteInfo))
         '&rnd=' + Math.random();
 };
+
