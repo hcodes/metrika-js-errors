@@ -66,7 +66,7 @@ window.onerror = function(msg, file, line, col) {
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/1.png" />
 
 Структуру и порядок параметров в отчёте можно менять на лету, а также добавлять новые параметры.
-Давайте с помощью кнопки «Группировки» добавим [браузер и ОС](https://metrika.yandex.ru/stat/user_vars?group=dekaminute&selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&id=43395579) в отчёт.
+Давайте с помощью кнопки «Группировки» добавим [браузер и ОС](https://metrika.yandex.ru/stat/user_vars?selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&dimensions=ym%3As%3AparamsLevel1%2Cym%3As%3AoperatingSystemRoot%2Cym%3As%3Abrowser%2Cym%3As%3AparamsLevel2%2Cym%3As%3AparamsLevel3%2Cym%3As%3AparamsLevel4%2Cym%3As%3AparamsLevel5&id=43395579) в отчёт.
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/3.png" />
 
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/4.png" />
@@ -134,4 +134,4 @@ window.onerror = function handler(msg, file, line, col, err) {
 Ссылки:
 - [GitHub](https://github.com/hcodes/metrika-js-errors/)
 - Отчёт «[Параметры визитов](https://yandex.ru/support/metrika/reports/visit-params.xml)»
-- [Пример отчёта](https://metrika.yandex.ru/stat/user_vars?group=dekaminute&selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&id=43395579) в Метрике
+- [Пример отчёта](https://metrika.yandex.ru/stat/user_vars?selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&dimensions=ym%3As%3AparamsLevel1%2Cym%3As%3AoperatingSystemRoot%2Cym%3As%3Abrowser%2Cym%3As%3AparamsLevel2%2Cym%3As%3AparamsLevel3%2Cym%3As%3AparamsLevel4%2Cym%3As%3AparamsLevel5&id=43395579) в Метрике
