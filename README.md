@@ -1,10 +1,10 @@
 # Отслеживание js-ошибок с помощью Метрики
-Использование системы сбора js-ошибок трудно переоценить.
+Использование системы отслеживания js-ошибок трудно переоценить.
 Даже на покрытом тестами сайте возникают js-ошибки, важно их найти и починить.
 Расскажу как искал для себя универсальное решение.
 <habracut/>
 
-Существует три вида систем сбора js-ошибок.
+Существует три вида систем отслеживания js-ошибок.
 
 ### Первый вид
 Самописная система. Добавляем компактный js-код на сайт:
@@ -31,8 +31,8 @@ window.onerror = function(msg, file, line, col) {
 У данной системы должны быть отчёты, которые можно самостоятельно формировать.
 
 ### Решение
-Объединим первый и третий вид. Ошибки будем вручную отправлять в [Яндекс.Метрику](https://metrika.yandex.ru) с помощью компактного js-кода.
-В Метрике есть необходимые отчёты и инструменты для анализа данных,  нет особых ограничений на количество счётчиков и собираемых данных, и она бесплатна.
+Объединим первый и третий вид. Ошибки будем вручную отправлять в [Яндекс.Метрику](https://metrika.yandex.ru) с помощью компактного js-кода.
+В Метрике есть необходимые отчёты и инструменты для анализа данных, нет особых ограничений на количество счётчиков и собираемых данных, и она бесплатна.
 
 Для сбора ошибок подойдёт отчёт «[Параметры визитов](https://yandex.ru/support/metrika/reports/visit-params.xml)».
 
@@ -76,14 +76,15 @@ window.onerror = function(msg, file, line, col) {
 3. Не забываем указать в коде свой номер счётчика (counterId).
 
 4. Получаем примерно [такой отчёт](https://metrika.yandex.ru/stat/user_vars?group=dekaminute&chart_type=pie&period=2017-03-12%3A2017-03-12&id=43395579):
+
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/1.png" />
 
 Структуру и порядок параметров в отчёте можно менять на лету, а также добавлять новые параметры.
 Давайте с помощью кнопки «Группировки» добавим [браузер и ОС](https://metrika.yandex.ru/stat/user_vars?selected_rows=yZkKR9&chart_type=pie&period=2017-03-12%3A2017-03-12&metrics=ym%3As%3Avisits%2Cym%3As%3AsumParams&dimensions=ym%3As%3AparamsLevel1%2Cym%3As%3AoperatingSystemRoot%2Cym%3As%3Abrowser%2Cym%3As%3AparamsLevel2%2Cym%3As%3AparamsLevel3%2Cym%3As%3AparamsLevel4%2Cym%3As%3AparamsLevel5&id=43395579) в отчёт.
+<img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/2.png" />
+
+
 <img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/3.png" />
-
-
-<img src="https://raw.githubusercontent.com/hcodes/metrika-js-errors/master/screenshots/4.png" />
 
 И ещё один момент, если скрипты на сайте загружаются с другого домена (CDN), то в отчёте, скорее всего, будут видны сообщения вида «Script error» и без стека.
 Чтобы вернуть сообщениям нормальный вид, необходимо добавить к скриптам атрибут `crossorigin="anonymous"` и HTTP-заголовок `Access-Control-Allow-Origin:"*"`.
