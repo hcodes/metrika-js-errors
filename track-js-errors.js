@@ -3,7 +3,7 @@ window.onerror = function(msg, file, line, col, err) {
 
     var counterId = 12345, // Ваш номер счётчика Метрики.
         siteInfo = {},
-        pointer = siteInfo;
+        pointer = siteInfo,
         path = [
             'JS errors',
             msg,
